@@ -70,21 +70,60 @@ import './App.css'
 
 //리소스 정리를 위한 useEffect
 
+// function Counter(){
+
+//   const[count, setCount] = useState(0);
+
+//   //useEffect 적용
+//   useEffect(() => {
+//     console.log('Hello from useEffect');
+//     return () => {
+//       console.log('Clean Up Function');
+//     }
+//   }, [count]);
+
+//   return(
+//   <>
+//     <p>{count}</p>
+//     <br />
+//     <button onClick={()=>setCount(preCount => preCount + 1)}>+1 수행</button>
+//   </>);
+// }
+
+// export default Counter;
+
+// 이상의 코드를 작성하고 처음 실행을 해보면, 
+// hello from useEffect
+// clean UP Function
+// hello from useEffect 까지만 콘솔에  찍히는 점을 확인할 수 있습니다. 
+// 즉 useEffect 의 두 번째 argument만 count 값이 바뀌지 않았기 때문에 clean up이 일어나지 않았습니다. 
+
+// 이후 버튼을 눌러 count 값을 +1 시킬 때 마다 (즉 count 상태 값을 바꿀 때 마다) Clean Up Function이 먼저 콘솔에 찍히고, 이 후에 hello from useEffect가 출력됨을 확인할 수 있습니다. 
+
+// 초기 렌더링이 끝나면 컴포넌트가 마운트 해제되고, 정리함수가 호출 됬습니다. 
+
 function Counter(){
 
   const[count, setCount] = useState(0);
+  const[count2, setCount2] = useState(0);
+
 
   //useEffect 적용
   useEffect(() => {
-    console.log('Hello from useEffect');
+    console.log('useEffect가 실행이 되었습니다.')
     return () => {
-      console.log('Clean Up Function');
-    }
-  }, [count]);
+            console.log('Clean Up Function');
+          }
+  
+  }, [count, count2]); //둘 차이를 확인하기 위해 카운트2를 지웠다가 썻다가 실험해보시기 바랍니다. 
 
   return(
   <>
     <p>{count}</p>
+    <br />
+    <p>{count2}</p>
+    <br />
+    <button onClick={()=>setCount(preCount => preCount + 1)}>+1 수행</button>
     <br />
     <button onClick={()=>setCount(preCount => preCount + 1)}>+1 수행</button>
   </>);
