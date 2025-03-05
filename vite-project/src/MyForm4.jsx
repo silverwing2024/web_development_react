@@ -37,8 +37,6 @@ function MyForm() {
       <input type="submit" value="제출"/>
     </form>
   );
-
-
 }
 
 export default MyForm;
