@@ -16,7 +16,12 @@ import ReactDOM from 'react-dom/client'
 // import App from './App11'
 // import App from './App12'
 // import App from './App13'
-import App from './App14'
+// import App from './App14'
+// import App from './App15'
+// import App from './App16'
+// import MyList from './MyList'
+// import MyTable from './MyTable'
+import MyForm from './MyForm4'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -33,7 +38,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <App8 /> */}
     {/* <Counter /> */}
     {/* <App /> */}
-    <App />
-
+    {/* <App /> */}
+    {/* <MyList /> */}
+    {/* <MyTable /> */}
+    <MyForm />
   </React.StrictMode>,
 )
