@@ -18,8 +18,5 @@ export default function MyCard(){
         </Typography>
       </CardContent>
     </Card>
-
   )
-
-
 }

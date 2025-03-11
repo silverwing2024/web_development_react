@@ -43,7 +43,8 @@ function AddItems(props: AddItemProps) {
 
   return(
     <>
-      <Button onClick={handleOpen}>
+      <br />
+      <Button variant="contained" onClick={handleOpen}>
         Add Item
       </Button>
       <Dialog open={open} onClose={handleClose}>
