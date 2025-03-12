@@ -1,43 +1,31 @@
 //import Header from "./Components/Header";
+// import 이미지변수명 from "경로";
+import Header2 from "./Components/Header/Header2";
+import {CORE_CONCEPTS} from "./data.js"
 
-const reactDescriptionKor = ['근본적인','결정적인', '혁신적인'];
-const reactDescriptionEng = ['Fundemental', 'Crucial', 'Core'];
-
-function getRandomInt(max){
-  return Math.floor(Math.random()*(max + 1)); // 얘의 return 값은 0~2의 int가 반한됨
-
-  //어떻게? Math.random() * (max + 1) 얘의 범위가 0.xxxx ~ 2.xxxx 이기 때문에
-}
-
-function Header(){
-  
-  const num = getRandomInt(2);
-  
+function CoreConcepts(props){
   return(
-    <header>
-    <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
-    <h1>React Essentials</h1>
-    <p>
-      {reactDescriptionEng[num]} React concepts you will need for almost any app you are
-      going to build!
-
-    </p>
-    <br />
-      대부분의 앱을 위해 당신이 필요로 할 {reactDescriptionKor[num]} React 개념 학습
-  </header>
+    <li>
+      <img src={props.image} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>    
   );
 }
 
 function App() {
   return (
     <div>
-      <Header />
+      <Header2 />
+      
       <main>
-        <h2>Time to get started!</h2>
-
-        <br />
-
-        <h2>시작해봅시다! 🎈</h2>
+        <section id="core-concepts">
+          <h2>핵심 개념들 of React</h2>
+          <ul>
+            <CoreConcepts image={CORE_CONCEPTS[0].image} title={CORE_CONCEPTS[0].title} description={CORE_CONCEPTS[0].description}/>
+          </ul>
+        </section>
+        
       </main>
     </div>
   );
