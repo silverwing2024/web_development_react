@@ -46,7 +46,7 @@ function App() {
 
           </menu>
           
-          {selectedTopic === '' ? <h3>버튼을 클릭하세요</h3> :
+          {selectedTopic === undefined ? <h3>버튼을 클릭하세요</h3> :
             <div id="tab-content">
             <h3>{EXAMPLES[selectedTopic]['title']}</h3>
             <p>{EXAMPLES[selectedTopic].description}</p>
