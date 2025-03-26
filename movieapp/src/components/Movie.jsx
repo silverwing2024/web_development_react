@@ -1,10 +1,14 @@
-function Movie({key, cover_image, title, summary, genres}){
+import { Link } from "react-router-dom";
+
+function Movie({id, cover_image, title, summary, genres}){
 
 return(
 <>
-<div key={key}>
+<div key={id}>
   <img src={cover_image} alt={title} />
-  <h2>{title}</h2>
+  <h2>
+    <Link to={`/movie/${id}`}>{title}</Link>
+  </h2>
   <p>{summary}</p>
   <ul>
     {genres.map((genre) => (<li key={genre}>{genre}</li>))}    
@@ -16,5 +20,3 @@ return(
 
 }
 export default Movie;
-
-
